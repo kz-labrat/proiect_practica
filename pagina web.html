@@ -1,0 +1,145 @@
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de inițiere RC-241</title>
+    <style>
+        nav {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        nav .corner {
+            position: absolute;
+            top: 0;
+            font-size: 12px;
+        }
+        nav .corner.left {
+            left: 10px;
+        }
+        nav .corner.right {
+            right: 10px;
+        }
+        footer {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer .corner {
+            position: absolute;
+            bottom: 0;
+            font-size: 12px;
+        }
+        footer .corner.left {
+            left: 10px;
+        }
+        footer .corner.right {
+            right: 10px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid blue;
+            border-radius: 10px;
+        }
+        .box input, .box select {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="corner left">Barbaroș</span>
+        <h1>Practica de inițiere RC-241</h1>
+        <span class="corner right">Barbaroș</span>
+    </nav>
+
+    <div class="container">
+        <div class="box">
+            <p>Acesta este un text</p>
+        </div>
+
+        <div class="box">
+            <select>
+                <option>Opțiunea 1</option>
+                <option>Opțiunea 2</option>
+                <option>Opțiunea 3</option>
+            </select>
+        </div>
+
+        <div class="box">
+            <input type="date">
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="https://cociugelena.wordpress.com/wp-content/uploads/2014/11/612161-1280x800-this-is-a-real-spring.jpg" alt="Natura 1">
+        <img src="https://images.pexels.com/photos/36478/amazing-beautiful-beauty-blue.jpg?cs=srgb&dl=pexels-pixabay-36478.jpg&fm=jpg" alt="Natura 2">
+        <img src="https://images.ctfassets.net/hrltx12pl8hq/7H27gMgHXJzCxmKb8xtXN0/e2708e67813bb739b530247284c6ff1d/2_rivers.webp" alt="Natura 3">
+    </div>
+    
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            border-radius: 10px;
+        }
+    </style>
+    <div class="answer-section">
+        <div>
+            <label>
+                <input type="radio">
+                <span>Varianta corectă este:</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox">
+                <span>Răspuns: Răspuns corect</span>
+            </label>
+        </div>
+    </div>
+    <style>
+        .answer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        .answer-section div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .answer-section label {
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        .answer-section span {
+            margin-left: 5px;
+        }
+    </style>
+    <footer>
+        <span class="corner left">Barbaroș</span>
+        <span class="corner right">Barbaroș</span>
+    </footer>
+</body>
+</html>
