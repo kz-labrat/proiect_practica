@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <header>
+    <div class="container nav">
+      <div class="logo">📘 eLearning CUTM</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="page.html">Page</a></li>
+          <li><a href="learnpress.html">LearnPress Add-On</a></li>
+          <li><a href="premium.html">Premium Theme</a></li>
+          <li><a href="login.html">Login / Register</a></li>
+          <li><div class="ml-4">
+            <button class="text-gray-600 hover:text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z" />
+              </svg>
+            </button>
+          </div></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 flex-grow">
+    <h1 class="text-3xl font-bold mb-6">All Courses</h1>
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Course List -->
+      <section class="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Sample Course Cards -->
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" class="w-full h-40 object-cover" alt="Course" />
+          <div class="p-4">
+            <h2 class="font-bold text-lg">Create An LMS Website With LearnPress</h2>
+            <p class="text-gray-600 text-sm">Instructor: Edward Profile</p>
+            <p class="text-sm text-gray-700 mt-2">Price: $19.99</p>
+            <p class="text-sm text-gray-700">Level: Beginner</p>
+          </div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" class="w-full h-40 object-cover" alt="Course" />
+          <div class="p-4">
+            <h2 class="font-bold text-lg">Create An LMS Website With LearnPress</h2>
+            <p class="text-gray-600 text-sm">Instructor: Edward Profile</p>
+            <p class="text-sm text-gray-700 mt-2">Price: $19.99</p>
+            <p class="text-sm text-gray-700">Level: Beginner</p>
+          </div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" class="w-full h-40 object-cover" alt="Course" />
+          <div class="p-4">
+            <h2 class="font-bold text-lg">Create An LMS Website With LearnPress</h2>
+            <p class="text-gray-600 text-sm">Instructor: Edward Profile</p>
+            <p class="text-sm text-gray-700 mt-2">Price: $19.99</p>
+            <p class="text-sm text-gray-700">Level: Beginner</p>
+          </div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" class="w-full h-40 object-cover" alt="Course" />
+          <div class="p-4">
+            <h2 class="font-bold text-lg">Create An LMS Website With LearnPress</h2>
+            <p class="text-gray-600 text-sm">Instructor: Edward Profile</p>
+            <p class="text-sm text-gray-700 mt-2">Price: $19.99</p>
+            <p class="text-sm text-gray-700">Level: Beginner</p>
+          </div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" class="w-full h-40 object-cover" alt="Course" />
+          <div class="p-4">
+            <h2 class="font-bold text-lg">Create An LMS Website With LearnPress</h2>
+            <p class="text-gray-600 text-sm">Instructor: Edward Profile</p>
+            <p class="text-sm text-gray-700 mt-2">Price: $19.99</p>
+            <p class="text-sm text-gray-700">Level: Beginner</p>
+          </div>
+        </div>
+        <div class="bg-white rounded shadow overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" class="w-full h-40 object-cover" alt="Course" />
+          <div class="p-4">
+            <h2 class="font-bold text-lg">Create An LMS Website With LearnPress</h2>
+            <p class="text-gray-600 text-sm">Instructor: Edward Profile</p>
+            <p class="text-sm text-gray-700 mt-2">Price: $19.99</p>
+            <p class="text-sm text-gray-700">Level: Beginner</p>
+          </div>
+        </div>
+        <!-- Repeat above card structure for more mock courses -->
+      </section>
+
+      <!-- Sidebar Filters -->
+      <aside class="lg:w-1/4">
+        <!-- Search Bar -->
+        <div class="relative mb-6">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="pl-10 pr-4 py-2 w-full border rounded shadow"
+          />
+          <svg class="w-4 h-4 absolute left-3 top-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z" />
+          </svg>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white p-4 shadow rounded mb-6">
+          <h4 class="text-gray-700 font-semibold mb-4">Course Categories</h4>
+          <ul class="text-sm text-gray-600">
+            <li><input type="checkbox" id="design" /> <label for="design">Art & Design</label></li>
+            <li><input type="checkbox" id="development" /> <label for="development">Development</label></li>
+            <li><input type="checkbox" id="marketing" /> <label for="marketing">Marketing</label></li>
+            <li><input type="checkbox" id="photography" /> <label for="photography">Photography</label></li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-4 shadow rounded mb-6">
+          <h4 class="text-gray-700 font-semibold mb-4">Instructors</h4>
+          <ul class="text-sm text-gray-600">
+            <li><input type="checkbox" id="edward" /> <label for="edward">Edward Profile</label></li>
+            <li><input type="checkbox" id="john" /> <label for="john">John Doe</label></li>
+            <li><input type="checkbox" id="jane" /> <label for="jane">Jane Smith</label></li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-4 shadow rounded mb-6">
+          <h4 class="text-gray-700 font-semibold mb-4">Price</h4>
+          <ul class="text-sm text-gray-600">
+            <li><input type="radio" name="price" id="free" /> <label for="free">Free</label></li>
+            <li><input type="radio" name="price" id="paid" /> <label for="paid">Paid</label></li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-4 shadow rounded mb-6">
+          <h4 class="text-gray-700 font-semibold mb-4">Reviews</h4>
+          <ul class="text-sm text-gray-600">
+            <li><input type="checkbox" id="five-stars" /> <label for="five-stars">★★★★★</label></li>
+            <li><input type="checkbox" id="four-stars" /> <label for="four-stars">★★★★☆</label></li>
+            <li><input type="checkbox" id="three-stars" /> <label for="three-stars">★★★☆☆</label></li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-4 shadow rounded">
+          <h4 class="text-gray-700 font-semibold mb-4">Level</h4>
+          <ul class="text-sm text-gray-600">
+            <li><input type="checkbox" id="beginner" /> <label for="beginner">Beginner</label></li>
+            <li><input type="checkbox" id="intermediate" /> <label for="intermediate">Intermediate</label></li>
+            <li><input type="checkbox" id="expert" /> <label for="expert">Expert</label></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-8 flex justify-center">
+      <div class="flex gap-2">
+        <button class="w-8 h-8 bg-blue-600 text-white rounded-full">1</button>
+        <button class="w-8 h-8 border rounded-full">2</button>
+        <button class="w-8 h-8 border rounded-full">3</button>
+        <button class="w-8 h-8 border rounded-full">›</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>eLearning <strong> CUTM</strong></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>GET HELP</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Latest Articles</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>PROGRAMS</h3>
+        <ul>
+          <li><a href="#">Art & Design</a></li>
+          <li><a href="#" class="highlight">Business</a></li>
+          <li><a href="#">IT & Software</a></li>
+          <li><a href="#">Languages</a></li>
+          <li><a href="#">Programming</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>CONTACT US</h3>
+        <p>Address: 2321 New Design Str, Lorem Ipsum10 Hudson Yards, USA</p>
+        <p>Tel: + (123) 2500-567-8988</p>
+        <p>Mail: supportlms@gmail.com</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
