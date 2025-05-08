@@ -232,3 +232,50 @@
     font-size: 13px;
     color: #666;
   }
+
+  .categories-section {
+    padding: 4rem 1rem;
+    background-color: #ffffff;
+  }
+  
+  /* Titlu și descriere */
+  .categories-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .categories-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  /* Titlul principal */
+  .categories-title {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    color: #1f2937; /* Tailwind gray-800 */
+  }
+  
+  /* Subtitlu */
+  .categories-subtitle {
+    color: #6b7280; /* Tailwind gray-500 */
+    font-size: 0.95rem;
+  }
+  
+  /* Buton All Categories */
+  .categories-button {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 9999px;
+    color: #4b5563; /* Tailwind gray-600 */
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  

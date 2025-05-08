@@ -46,7 +46,7 @@ document.querySelectorAll('.category-grid .card').forEach(card => {
 
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('mouseover', () => {
-        link.style.color = '#007BFF'; // Change color on hover
+        link.style.color = '#ff782e'; // Change color on hover
         link.style.textDecoration = 'underline'; // Add underline on hover
         link.style.transition = 'color 0.2s ease-in-out';
     });
