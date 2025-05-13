@@ -13,8 +13,9 @@ function loadHTML(selector, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadHTML("#header-container", "header.html");
-  loadHTML("#footer-container", "footer.html");
+  loadHTML("#header-container", "D:\_backup_\Desktop\proiect\s2z1\navbar\nav.html");
+  loadHTML("#footer-container", "D:\_backup_\Desktop\proiect\s2z1\footer\footer.html");
+  loadHTML("#continut-1", "D:\_backup_\Desktop\proiect\s2z1\footer\footer.html");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
