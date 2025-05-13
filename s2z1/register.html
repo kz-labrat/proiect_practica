@@ -29,7 +29,15 @@
     <form>
       <input type="text" placeholder="Username" required>
       <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
+      <input type="password" 
+       placeholder="Password" 
+       required 
+       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}" 
+       title="Password must be at least 8 characters, contain uppercase and lowercase letters, a number, and a special character.">
+       <small id="passwordHelp" class="text-sm text-gray-500 mt-1">
+  Must be 8+ characters, include upper/lowercase, number, and symbol.
+</small>
+
       <input type="tel" placeholder="Phone Number" required> <!-- Added phone number input -->
       <button type="submit">Register</button>
     </form>

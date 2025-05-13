@@ -10,4 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  
+  document.addEventListener("DOMContentLoaded", () => {
+  const passwordInput = document.querySelector('input[type="password"]');
+
+  passwordInput.addEventListener("input", () => {
+    const value = passwordInput.value;
+    const isValid = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}/.test(value);
+
+    if (isValid) {
+      passwordInput.style.borderColor = "green";
+    } else {
+      passwordInput.style.borderColor = "red";
+    }
+  });
+});
