@@ -5,37 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="../footer/footer.css">
+  <link rel="stylesheet" href="../navbar/nav.css">
+  <link rel="stylesheet" href="../register/register.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <script src="../script.js"></script>
 </head>
 <body class="bg-gray-100">
-<header class="bg-white shadow-md p-6 flex justify-between items-center">
-  <h1 class="text-3xl font-bold text-gray-800">My Website</h1>
-  <nav>
-    <ul class="flex space-x-6 text-lg font-medium">
-      <li>
-        <a href="register.html" class="text-blue-600 hover:text-blue-800 hover:underline">Create Account</a>
-      </li>
-      <li>
-        <a href="login.html" class="text-green-600 hover:text-green-800 hover:underline">Login</a>
-      </li>
-      <li>
-        <a href="logout.html" class="text-red-600 hover:text-red-800 hover:underline">Logout</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-  <div class="form-container">
-    <h2>Create Account</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required
-       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}" 
-       title="Password must be at least 8 characters, contain uppercase and lowercase letters, a number, and a special character.">
-      <input type="tel" placeholder="Phone Number" required> <!-- Added phone number input -->
-      <a href="login.html" class="button" type="submit">Register</a>
-    </form>
-  </div>
+<div id="header-container"></div>
+<div id="continut-1"></div>
 <footer class="mt-auto bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
   <div class="w-full mx-auto max-w-screen-xl p-4 flex justify-center">
     <span class="text-sm text-gray-500 text-center dark:text-gray-400">
@@ -43,7 +21,5 @@
     </span>
   </div>
 </footer>
-  
-  <script src="script.js"></script>
 </body>
 </html>
