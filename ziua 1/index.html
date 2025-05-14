@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <title>Calculator Admitere</title>
   <link rel="stylesheet" href="style.css">
+  <script src="CalculareaAdmitere.js"></script>
 </head>
 <body>
   <div class="container">
@@ -18,11 +19,17 @@
       <option value="drept">Drept</option>
     </select>
 
+    <label for="tara">Țara:</label>
+<select id="tara">
+  <option value="toate">Toate</option>
+  <option value="romania">România</option>
+  <option value="moldova">Moldova</option>
+</select>
+
     <button onclick="calculeazaAdmiterea()">Calculează</button>
 
     <div id="rezultate" class="result"></div>
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
