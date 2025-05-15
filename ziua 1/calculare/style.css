@@ -27,6 +27,7 @@ body.dark .container {
   background: #232323 !important;
   color: #f1f1f1 !important;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border: 1px solid #444 !important; /* Use a dark border in dark mode */
 }
 
 body.dark h1,
