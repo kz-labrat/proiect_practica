@@ -56,3 +56,46 @@ document.querySelectorAll('nav a').forEach(link => {
         link.style.textDecoration = 'none'; // Remove underline
     });
 });
+
+function addReview() {
+      const name = document.getElementById('name').value;
+      const stars = document.getElementById('stars').value;
+      const text = document.getElementById('text').value;
+      if (!name || !stars || !text || stars < 1 || stars > 5) {
+        alert('Completează toate câmpurile și asigură-te că ai introdus un număr valid de stele (1-5).');
+        return;
+      }
+      const review = document.createElement('div');
+      review.className = 'review';
+      review.innerHTML = `
+        <div class="name">${name}</div>
+        <div class="stars">${'★'.repeat(stars)}${'☆'.repeat(5 - stars)}</div>
+        <div class="text">${text}</div>
+      `;
+      document.getElementById('reviews').prepend(review);
+      document.getElementById('name').value = '';
+      document.getElementById('stars').value = '';
+      document.getElementById('text').value = '';
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    toggle.innerHTML = `<i class="fas fa-sun"></i>`;
+  }
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      toggle.innerHTML = `<i class="fas fa-sun"></i>`;
+    } else {
+      localStorage.setItem("theme", "light");
+      toggle.innerHTML = `<i class="fas fa-moon"></i>`;
+    }
+  });
+});

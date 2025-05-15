@@ -18,6 +18,50 @@ body {
     background-color: #f0f0f0; /* Optional: Add a background color */
 }
 
+body.dark {
+  background-color: #181818 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark .container {
+  background: #232323 !important;
+  color: #f1f1f1 !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+body.dark h1,
+body.dark #rezultate h3 {
+  color: #ff944d !important;
+}
+
+body.dark input,
+body.dark select {
+  background-color: #222 !important;
+  color: #eee !important;
+  border: 1px solid #444 !important;
+}
+
+body.dark input::placeholder,
+body.dark select::placeholder {
+  color: #888 !important;
+}
+
+body.dark button {
+  background-color: #ff7e22 !important;
+  color: #fff !important;
+  border: none;
+}
+
+body.dark button:hover {
+  background-color: #cc661a !important;
+  color: #fff !important;
+}
+
+body.dark .map-preview {
+  background: #232323 !important;
+  border: 1px solid #444 !important;
+}
+
 .container {
   width: 80% !important;
   max-width: 600px !important;
@@ -43,15 +87,18 @@ input, select, button {
 }
 
 button {
-  background-color: #ff7e5f !important; /* Bright orange background */
-  color: black !important; /* White text for contrast */
+  background-color: #ff7e5f !important;
+  color: black !important;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  font-size: 16px;
+  padding: 6px 6px;      /* Smaller padding for a smaller button */
+  font-size: 14px;        /* Smaller font size */
   border-radius: 6px;
   transition: background 0.3s ease, color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: auto;            /* Let the button size to its content */
+  min-width: 80px;        /* Optional: minimum width for consistency */
+  display: inline-block;  /* Prevent full width */
 }
 
 button:hover {

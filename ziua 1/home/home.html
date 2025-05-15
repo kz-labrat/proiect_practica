@@ -8,26 +8,23 @@
   <link rel="stylesheet" href="home.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <script src="../loader.js"></script>
+  <script src="../theme.js"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
   <header>
     <div class="container nav">
-      <div class="logo">📘 e<span style="color: orange;">Learning CUTM</span></div>
+      <div class="logo">📘<span style="color: orange;">StudyZone</span></div>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="courses.html">Courses</a></li>
+          <li><a href="../home/home.html">Home</a></li>
+          <li><a href="../calculare/index.html">Calculator</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="page.html">Page</a></li>
-          <li><a href="learnpress.html">LearnPress Add-On</a></li>
-          <li><a href="premium.html">Premium Theme</a></li>
-          <li><a href="login.html">Login / Register</a></li>
+          <li><a href="../logare/login.html">Login / Register</a></li>
           <li><div class="ml-4">
-            <button class="text-gray-600 hover:text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z" />
-              </svg>
-            </button>
+            <button id="theme-toggle" class="ml-4 text-gray-600 hover:text-yellow-500 transition duration-300 text-lg">
+          <i class="fas fa-moon"></i>
+        </button>
           </div></li>
         </ul>
       </nav>
@@ -39,12 +36,12 @@
     <section class="hero">
       <div class="container hero-content">
         <div class="text">
-          <h1>Build Skills With <br><span>Online Course</span></h1>
-          <p>We denounce with righteous indignation and dislike men who are so beguiled and demoralized that cannot trouble.</p>
-          <button>Posts Comment!</button>
+          <h1>Unde învățatul devine simplu.<br><span>StudyZone</span></h1>
+          <p><b>StudyZone</b> este spațiul tău online de învățare inteligentă. Lecții clare, exerciții practice și suport pentru examene – totul într-un singur loc.</p>
+          <button onclick="window.location.href='../calculare/index.html'">Calculator</button>
         </div>
         <div class="hero-img">
-          <img src="https://purepng.com/public/uploads/large/purepng.com-sittingman-people-persons-maleelevation-projection-section-sitting-12615263246967dcie.png" alt="Hero Image" />
+          <img src="image-removebg-preview.png" alt="Hero Image" />
         </div>
       </div>
     </section>
@@ -53,28 +50,44 @@
       <div class="max-w-7xl mx-auto">
         <div class="categories-header">
           <div>
-            <h2 class="categories-title">Top Categories</h2>
-            <p class="categories-subtitle">Explore our Popular Categories</p>
+            <h2 class="categories-title">Reviews</h2>
+            <p class="categories-subtitle">Explore the reviews of our Students</p>
           </div>
-          <button class="categories-button">All Categories</button>
+          <button class="categories-button">All Reviews</button>
         </div>
 
-    <section class="categories">
-      <div class="container">
-        <div class="category-grid">
-          <div class="card">🎨 Art & Design<br><small>38 Courses</small></div>
-          <div class="card">💻 Development<br><small>38 Courses</small></div>
-          <div class="card">💬 Communication<br><small>38 Courses</small></div>
-          <div class="card">🎥 Videography<br><small>38 Courses</small></div>
-          <div class="card">📸 Photography<br><small>38 Courses</small></div>
-          <div class="card">📈 Marketing<br><small>38 Courses</small></div>
-          <div class="card">💰 Finance<br><small>38 Courses</small></div>
-          <div class="card">🔬 Science<br><small>38 Courses</small></div>
-          <div class="card">🌐 Network<br><small>38 Courses</small></div>
-        </div>
+    <div class="reviews">
+    <div id="reviews">
+      <div class="review">
+        <div class="name">Ana Popescu</div>
+        <div class="stars">★★★★★</div>
+        <div class="text">Platforma e genială! Am înțeles matematica mult mai ușor cu lecțiile interactive.</div>
       </div>
-    </section>
-  </main>
+      <div class="review">
+        <div class="name">Mihai Ionescu</div>
+        <div class="stars">★★★★☆</div>
+        <div class="text">Foarte utilă, deși aș vrea mai multe lecții la biologie. În rest, totul perfect.</div>
+      </div>
+    </div>
+
+    <div class="add-review">
+      <h2>Adaugă o recenzie</h2>
+      <input type="text" id="name" placeholder="Numele tău" />
+      <input type="number" id="stars" placeholder="Stele (1-5)" min="1" max="5" />
+      <textarea id="text" rows="4" placeholder="Scrie recenzia ta..."></textarea>
+      <button onclick="addReview()">Trimite recenzia</button>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+    <div class="mt-8 flex justify-center">
+      <div class="flex gap-2">
+        <button class="w-8 h-8 bg-blue-600 text-white rounded-full">1</button>
+        <button class="w-8 h-8 border rounded-full">2</button>
+        <button class="w-8 h-8 border rounded-full">3</button>
+        <button class="w-8 h-8 border rounded-full">›</button>
+      </div>
+    </div>
 
   <!-- Footer stays outside the main content -->
   <footer class="footer">
