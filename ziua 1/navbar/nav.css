@@ -115,9 +115,13 @@ body.dark .footer-bottom {
 }
 
 header {
-  background: #fff;
-  padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #fff; /* or your navbar background */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 .nav {

@@ -31,21 +31,23 @@ footer {
   border-top: 1px solid #ddd;
 }
 
-footer, #footer-container {
-  background: #181818 !important;
-  color: #eee !important;
-  border-top: 1px solid #444 !important;
+/* Light mode footer (default) */
+footer,
+#footer-container {
+  background: #f9f9f9;
+  color: #222;
+  border-top: 1px solid #ddd;
   text-align: center;
   padding: 16px 0;
 }
 
+/* Dark mode footer */
 body.dark footer,
 body.dark #footer-container {
   background: #181818 !important;
   color: #eee !important;
   border-top: 1px solid #444 !important;
 }
-
 .footer-logo {
   flex: 1 1 250px;
 }
