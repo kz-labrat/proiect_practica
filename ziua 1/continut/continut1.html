@@ -1,13 +1,13 @@
 <div class="form-container">
     <h2>Create Account</h2>
-    <form>
+    <form id="register-form">
       <input type="text" placeholder="Username" required>
       <input type="email" placeholder="Email" required>
       <input type="password" placeholder="Password" required
        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}" 
        title="Password must be at least 8 characters, contain uppercase and lowercase letters, a number, and a special character.">
       <input type="tel" placeholder="Phone Number" required> <!-- Added phone number input -->
-      <a href="../logare/login.html" class="button" type="submit">Register</a>
+      <button type="submit" id="register-btn">Register</button>
       <p>Already have an account? <a href="../logare/login.html">Login</a></p>
     </form>
   </div>
