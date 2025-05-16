@@ -58,25 +58,31 @@ document.querySelectorAll('nav a').forEach(link => {
 });
 
 function addReview() {
-      const name = document.getElementById('name').value;
-      const stars = document.getElementById('stars').value;
-      const text = document.getElementById('text').value;
-      if (!name || !stars || !text || stars < 1 || stars > 5) {
-        alert('Completează toate câmpurile și asigură-te că ai introdus un număr valid de stele (1-5).');
-        return;
-      }
-      const review = document.createElement('div');
-      review.className = 'review';
-      review.innerHTML = `
-        <div class="name">${name}</div>
-        <div class="stars">${'★'.repeat(stars)}${'☆'.repeat(5 - stars)}</div>
-        <div class="text">${text}</div>
-      `;
-      document.getElementById('reviews').prepend(review);
-      document.getElementById('name').value = '';
-      document.getElementById('stars').value = '';
-      document.getElementById('text').value = '';
-      }
+  const name = document.getElementById('name').value;
+  const stars = parseInt(document.getElementById('stars').value);
+  const text = document.getElementById('text').value;
+  if (!name || !stars || !text || stars < 1 || stars > 5) {
+    alert('Completează toate câmpurile și asigură-te că ai introdus un număr valid de stele (1-5).');
+    return;
+  }
+  // Adaugă recenzia în array
+  reviews.unshift({
+    name: name,
+    stars: stars,
+    text: text
+  });
+  // Reafișează pagina curentă (sau pagina 1 dacă ești pe "All Reviews")
+  if (showingAll) {
+    renderReviews(1);
+  } else {
+    renderReviews(currentPage);
+    setActiveButton(currentPage);
+  }
+  // Golește câmpurile
+  document.getElementById('name').value = '';
+  document.getElementById('stars').value = '';
+  document.getElementById('text').value = '';
+}
 
       document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("theme-toggle");
@@ -99,3 +105,110 @@ function addReview() {
     }
   });
 });
+
+const reviews = [
+  {
+    name: "Ana Popescu",
+    stars: 5,
+    text: "Platforma e genială! Am înțeles matematica mult mai ușor cu lecțiile interactive."
+  },
+  {
+    name: "Mihai Ionescu",
+    stars: 4,
+    text: "Foarte utilă, deși aș vrea mai multe lecții la biologie. În rest, totul perfect."
+  },
+  {
+    name: "Maria Georgescu",
+    stars: 5,
+    text: "Super platformă! Recomand tuturor colegilor mei."
+  },
+  {
+    name: "Andrei Vasilescu",
+    stars: 3,
+    text: "E ok, dar ar fi utilă o aplicație mobilă."
+  },
+  {
+    name: "Elena Dumitru",
+    stars: 4,
+    text: "Mi-a plăcut mult interfața și modul de prezentare a lecțiilor."
+  },
+  // Adaugă mai multe recenzii dacă vrei
+];
+
+const DEFAULT_REVIEWS_PER_PAGE = 2;
+let REVIEWS_PER_PAGE = DEFAULT_REVIEWS_PER_PAGE;
+let currentPage = 1;
+let showingAll = false;
+
+function renderReviews(page) {
+  const container = document.getElementById('reviews-container');
+  container.innerHTML = '';
+  const start = (page - 1) * REVIEWS_PER_PAGE;
+  const end = start + REVIEWS_PER_PAGE;
+  const pageReviews = reviews.slice(start, end);
+
+  pageReviews.forEach(r => {
+    const reviewDiv = document.createElement('div');
+    reviewDiv.className = 'review';
+    reviewDiv.innerHTML = `
+      <div class="name">${r.name}</div>
+      <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+      <div class="text">${r.text}</div>
+    `;
+    container.appendChild(reviewDiv);
+  });
+}
+
+function setActiveButton(page) {
+  document.querySelectorAll('.page-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.page == page) btn.classList.add('active');
+  });
+}
+
+// Pagination buttons
+document.querySelectorAll('.page-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (this.dataset.page === 'next') {
+      if (currentPage < Math.ceil(reviews.length / REVIEWS_PER_PAGE)) {
+        currentPage++;
+      }
+    } else {
+      currentPage = parseInt(this.dataset.page);
+    }
+    renderReviews(currentPage);
+    setActiveButton(currentPage);
+    // Show pagination again if hidden
+    document.querySelector('.pagination').style.display = '';
+    // Reset "All Reviews" button state
+    const allReviewsBtn = document.querySelector('.categories-button');
+    allReviewsBtn.textContent = "All Reviews";
+    showingAll = false;
+    REVIEWS_PER_PAGE = DEFAULT_REVIEWS_PER_PAGE;
+  });
+});
+
+// "All Reviews" button toggle
+const allReviewsBtn = document.querySelector('.categories-button');
+allReviewsBtn.addEventListener('click', function() {
+  if (!showingAll) {
+    REVIEWS_PER_PAGE = reviews.length;
+    currentPage = 1;
+    renderReviews(currentPage);
+    document.querySelector('.pagination').style.display = 'none';
+    allReviewsBtn.textContent = "Less Reviews";
+    showingAll = true;
+  } else {
+    REVIEWS_PER_PAGE = DEFAULT_REVIEWS_PER_PAGE;
+    currentPage = 1;
+    renderReviews(currentPage);
+    document.querySelector('.pagination').style.display = '';
+    allReviewsBtn.textContent = "All Reviews";
+    showingAll = false;
+    setActiveButton(currentPage);
+  }
+});
+
+// Initial render
+renderReviews(currentPage);
+setActiveButton(currentPage);

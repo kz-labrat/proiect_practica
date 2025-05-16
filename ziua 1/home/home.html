@@ -55,38 +55,26 @@
           <button class="categories-button">All Reviews</button>
         </div>
 
-    <div class="reviews">
-    <div id="reviews">
-      <div class="review">
-        <div class="name">Ana Popescu</div>
-        <div class="stars">★★★★★</div>
-        <div class="text">Platforma e genială! Am înțeles matematica mult mai ușor cu lecțiile interactive.</div>
-      </div>
-      <div class="review">
-        <div class="name">Mihai Ionescu</div>
-        <div class="stars">★★★★☆</div>
-        <div class="text">Foarte utilă, deși aș vrea mai multe lecții la biologie. În rest, totul perfect.</div>
-      </div>
-    </div>
+    <div class="reviews" id="reviews-container">
+  <!-- Reviews will be rendered here by JS -->
+</div>
 
     <div class="add-review">
       <h2>Adaugă o recenzie</h2>
       <input type="text" id="name" placeholder="Numele tău" />
       <input type="number" id="stars" placeholder="Stele (1-5)" min="1" max="5" />
       <textarea id="text" rows="4" placeholder="Scrie recenzia ta..."></textarea>
-      <button onclick="addReview()">Trimite recenzia</button>
+      <button type="button" onclick="addReview()">Trimite recenzie</button>
     </div>
   </div>
 
   <!-- Pagination -->
-    <div class="mt-8 flex justify-center">
-      <div class="flex gap-2">
-        <button class="w-8 h-8 bg-blue-600 text-white rounded-full">1</button>
-        <button class="w-8 h-8 border rounded-full">2</button>
-        <button class="w-8 h-8 border rounded-full">3</button>
-        <button class="w-8 h-8 border rounded-full">›</button>
-      </div>
-    </div>
+    <div class="pagination mt-8 flex justify-center">
+  <button class="page-btn active" data-page="1">1</button>
+  <button class="page-btn" data-page="2">2</button>
+  <button class="page-btn" data-page="3">3</button>
+  <button class="page-btn" data-page="next">›</button>
+</div>
 
   <!-- Footer stays outside the main content -->
   <footer class="footer">
