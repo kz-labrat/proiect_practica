@@ -86,3 +86,35 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = "index.html";
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('media-form');
+  const rezultatDiv = document.getElementById('media-rezultat');
+  const goToAdmitereBtn = document.getElementById('go-to-admitere');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Collect all grades
+    const grades = {
+      bac: parseFloat(document.getElementById('bac').value),
+      anual: parseFloat(document.getElementById('anual').value),
+      examen: parseFloat(document.getElementById('examen').value) || 0,
+      matematica: parseFloat(document.getElementById('matematica').value) || 0,
+      informatica: parseFloat(document.getElementById('informatica').value) || 0,
+      fizica: parseFloat(document.getElementById('fizica').value) || 0,
+      chimie: parseFloat(document.getElementById('chimie').value) || 0,
+      biologie: parseFloat(document.getElementById('biologie').value) || 0,
+      romana: parseFloat(document.getElementById('romana').value) || 0,
+      engleza: parseFloat(document.getElementById('engleza').value) || 0,
+    };
+    // Save to localStorage
+    localStorage.setItem('grades', JSON.stringify(grades));
+
+    rezultatDiv.innerHTML = `<p class="text-green-600 font-bold">Notele au fost salvate! Apasă pe Admitere pentru a vedea la ce universități poți intra.</p>`;
+    goToAdmitereBtn.style.display = "block";
+  });
+
+  goToAdmitereBtn.addEventListener('click', function() {
+    window.location.href = "index.html";
+  });
+});

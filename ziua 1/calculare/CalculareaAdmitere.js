@@ -154,38 +154,253 @@ const dateAdmitere = {
 };
 
   function calculeazaAdmiterea() {
-    const media = parseFloat(document.getElementById("media").value);
-    const domeniu = document.getElementById("domeniu").value;
-    const rezultateDiv = document.getElementById("rezultate");
+  // Get grades from localStorage
+  const grades = JSON.parse(localStorage.getItem('grades') || '{}');
+  const domeniu = document.getElementById("domeniu").value;
+  const tara = document.getElementById("tara").value;
+  const rezultateDiv = document.getElementById("rezultate");
 
-    if (isNaN(media) || media < 5 || media > 10) {
-      rezultateDiv.innerHTML = "<p style='color:red;'>Introduce o medie validă între 5 și 10.</p>";
-      return;
-    }
+  // Helper: fallback to 0 if not present
+  const g = n => typeof grades[n] === "number" ? grades[n] : 0;
 
-    const tara = document.getElementById("tara").value;
+  // Define formulas for each university (by name)
+const formule = {
+  "UTM - Universitatea Tehnică a Moldovei": {
+    calc: g =>
+      0.10 * g("matematica") +
+      0.10 * g("informatica") +
+      0.10 * g("fizica") +
+      0.10 * g("engleza") +
+      0.20 * g("anual") +
+      0.20 * g("examen") +
+      0.20 * g("bac"),
+    descriere: "10% Matematică + 10% Informatică + 10% Fizică + 10% Engleză + 20% Media anuală + 20% Examen + 20% BAC"
+  },
+  "UAIC - Informatică": {
+    calc: g =>
+      0.25 * g("matematica") +
+      0.25 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("fizica") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Engleză + 10% Fizică + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "TUIASI - Calculatoare": {
+    calc: g =>
+      0.30 * g("matematica") +
+      0.20 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "30% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "USV - Informatică": {
+    calc: g =>
+      0.25 * g("matematica") +
+      0.25 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "UGAL - Informatică": {
+    calc: g =>
+      0.25 * g("matematica") +
+      0.25 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("fizica") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Fizică + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "UBc - Informatică": {
+    calc: g =>
+      0.25 * g("matematica") +
+      0.25 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "Universitatea Petre Andrei": {
+    calc: g =>
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.20 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 20% BAC"
+  },
+  "USM - Universitatea de Stat din Moldova": {
+    calc: g =>
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("fizica") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.20 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Fizică + 10% Media anuală + 10% Examen + 20% BAC"
+  },
+  "Universitatea de Stat „Alecu Russo” din Bălți": {
+    calc: g =>
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.20 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 20% BAC"
+  },
+  "Universitatea de Studii Europene": {
+    calc: g =>
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.20 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 20% BAC"
+  },
 
-const rezultate = dateAdmitere[domeniu]
+  // MEDICINA
+  "UMF Iași": {
+    calc: g =>
+      0.22 * g("chimie") +
+      0.22 * g("biologie") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("fizica") +
+      0.08 * g("anual") +
+      0.08 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "22% Chimie + 22% Biologie + 10% Română + 10% Engleză + 10% Fizică + 8% Media anuală + 8% Examen + 10% BAC"
+  },
+  "UMFST Târgu Mureș - extensie Bacău": {
+    calc: g =>
+      0.22 * g("chimie") +
+      0.22 * g("biologie") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("fizica") +
+      0.08 * g("anual") +
+      0.08 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "22% Chimie + 22% Biologie + 10% Română + 10% Engleză + 10% Fizică + 8% Media anuală + 8% Examen + 10% BAC"
+  },
+  "USMF „Nicolae Testemițanu”": {
+    calc: g =>
+      0.22 * g("chimie") +
+      0.22 * g("biologie") +
+      0.10 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("fizica") +
+      0.08 * g("anual") +
+      0.08 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "22% Chimie + 22% Biologie + 10% Română + 10% Engleză + 10% Fizică + 8% Media anuală + 8% Examen + 10% BAC"
+  },
+
+  // DREPT
+  "UAIC - Drept": {
+    calc: g =>
+      0.30 * g("istorie") +
+      0.30 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "UGAL - Drept": {
+    calc: g =>
+      0.30 * g("istorie") +
+      0.30 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "USV - Drept": {
+    calc: g =>
+      0.30 * g("istorie") +
+      0.30 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "USM - Drept": {
+    calc: g =>
+      0.30 * g("istorie") +
+      0.30 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  },
+  "ULIM - Facultatea de Drept": {
+    calc: g =>
+      0.30 * g("istorie") +
+      0.30 * g("romana") +
+      0.10 * g("engleza") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
+      0.10 * g("bac"),
+    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+  }
+};
+
+
+  // Filter and map results
+  const rezultate = dateAdmitere[domeniu]
   .filter(fac => {
     if (tara === "toate") return true;
     if (tara === "romania") return fac.oras.includes("România");
     if (tara === "moldova") return fac.oras.includes("Moldova");
   })
   .map(fac => {
+    let medie, formulaText;
+    if (formule[fac.universitate]) {
+      medie = formule[fac.universitate].calc(n => g(n));
+      formulaText = formule[fac.universitate].descriere;
+    } else {
+      medie = g("bac");
+      formulaText = "Doar media BAC";
+    }
+
     let mesaj = "";
-    if (media >= fac.buget)
+    if (medie >= fac.buget)
       mesaj = `<span style='color:green;'>buget</span>`;
-    else if (media >= fac.taxa)
+    else if (medie >= fac.taxa)
       mesaj = `<span style='color:orange;'>taxă</span>`;
     else
       mesaj = `<span style='color:red;'>Media insuficientă</span>`;
 
-      return `
+    return `
       <div style="margin-bottom:20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
         <strong>${fac.universitate}</strong> – ${fac.oras}<br>
+        <span style="font-size:0.95em;color:#888;">Formula: ${formulaText}</span><br>
+        Media ta calculată: <b>${medie.toFixed(2)}</b><br>
         Poți intra la: ${mesaj}<br>
         <a href="${fac.link}" target="_blank">🔗 Vizitează site-ul oficial</a><br>
-    
         <div class="map-container">
           <a href="${fac.maps}" target="_blank">📍 Vezi locația pe Google Maps</a>
           <div class="map-preview">
@@ -198,8 +413,7 @@ const rezultate = dateAdmitere[domeniu]
         </div>
       </div>
     `;
-    
-    }).join("");
+  }).join("");
 
   rezultateDiv.innerHTML = `<h3>Rezultate posibile:</h3>${rezultate}`;
 }
