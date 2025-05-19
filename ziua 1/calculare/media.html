@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Medie Admitere</title>
+  <link rel="stylesheet" href="../navbar/nav.css">
+  <link rel="stylesheet" href="../footer/footer.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script src="../loader.js"></script>
+  <script src="../theme.js"></script>
+</head>
+<body>
+  <div id="header-container"></div>
+  <button id="toggle-theme" style="position: fixed; top: 20px; right: 20px; z-index: 2000;">
+    <i class="fas fa-moon"></i>
+  </button>
+  <main class="flex-grow"></main>
+  <div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg border border-orange-500">
+    <h1 class="text-2xl font-bold text-center text-orange-600 mb-6">Calculator Medie Admitere</h1>
+
+    <form id="media-form">
+      <label for="bac" class="block text-gray-700 font-medium mb-2">Media BAC:</label>
+      <input type="number" id="bac" step="0.01" min="5" max="10" placeholder="ex: 8.75" class="w-full p-3 border border-gray-300 rounded-lg mb-4" required>
+
+      <label for="anual" class="block text-gray-700 font-medium mb-2">Media anuală:</label>
+      <input type="number" id="anual" step="0.01" min="5" max="10" placeholder="ex: 9.20" class="w-full p-3 border border-gray-300 rounded-lg mb-4" required>
+
+      <label for="examen" class="block text-gray-700 font-medium mb-2">Nota examen admitere (dacă există):</label>
+      <input type="number" id="examen" step="0.01" min="0" max="10" placeholder="ex: 7.50 (sau lasă gol dacă nu ai examen)" class="w-full p-3 border border-gray-300 rounded-lg mb-4">
+
+      <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition duration-300">
+        Calculează Media
+      </button>
+    </form>
+
+    <div id="media-rezultat" class="result mt-6"></div>
+    <!-- Adaugă acest cod sub div-ul cu id="media-rezultat" în media.html -->
+<div id="media-rezultat" class="result mt-6"></div>
+<button id="go-to-admitere" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition duration-300 mt-4" style="display:none;">
+  Admitere
+</button>
+  </div>
+  <div id="footer-container"></div>
+
+<script src="CalculareMedie.js" defer></script>
+</body>
+</html>
