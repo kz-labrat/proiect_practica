@@ -24,6 +24,7 @@ document.getElementById('register-form').addEventListener('submit', function(e) 
     return;
   }
 
-  // If all validations pass, redirect to login page
-  window.location.href = "../logare/login.html";
+  // Set login state and redirect to home
+  localStorage.setItem('isLoggedIn', 'true');
+  window.location.href = '../home/home.html';
 });
