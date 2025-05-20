@@ -165,206 +165,207 @@ const dateAdmitere = {
 
   // Define formulas for each university (by name)
 const formule = {
+  // INFORMATICA
   "UTM - Universitatea Tehnică a Moldovei": {
     calc: g =>
-      0.10 * g("matematica") +
-      0.10 * g("informatica") +
+      0.15 * g("matematica") +
+      0.15 * g("informatica") +
       0.10 * g("fizica") +
       0.10 * g("engleza") +
       0.20 * g("anual") +
-      0.20 * g("examen") +
-      0.20 * g("bac"),
-    descriere: "10% Matematică + 10% Informatică + 10% Fizică + 10% Engleză + 20% Media anuală + 20% Examen + 20% BAC"
+      0.15 * g("examen") +
+      0.15 * g("bac"),
+    descriere: "15% Matematică + 15% Informatică + 10% Fizică + 10% Engleză + 20% Media anuală + 15% Examen + 15% BAC"
   },
   "UAIC - Informatică": {
     calc: g =>
-      0.25 * g("matematica") +
-      0.25 * g("informatica") +
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
       0.10 * g("fizica") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Engleză + 10% Fizică + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.075 * g("examen") +
+      0.075 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Fizică + 15% Media anuală + 7.5% Examen + 7.5% BAC"
   },
   "TUIASI - Calculatoare": {
     calc: g =>
-      0.30 * g("matematica") +
+      0.25 * g("matematica") +
       0.20 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
+      0.15 * g("anual") +
       0.10 * g("examen") +
       0.10 * g("bac"),
-    descriere: "30% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+    descriere: "25% Matematică + 20% Informatică + 10% Română + 10% Engleză + 15% Media anuală + 10% Examen + 10% BAC"
   },
   "USV - Informatică": {
     calc: g =>
-      0.25 * g("matematica") +
-      0.25 * g("informatica") +
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   },
   "UGAL - Informatică": {
     calc: g =>
-      0.25 * g("matematica") +
-      0.25 * g("informatica") +
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("fizica") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Fizică + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Fizică + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   },
   "UBc - Informatică": {
     calc: g =>
-      0.25 * g("matematica") +
-      0.25 * g("informatica") +
+      0.20 * g("matematica") +
+      0.20 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "25% Matematică + 25% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   },
   "Universitatea Petre Andrei": {
     calc: g =>
-      0.20 * g("matematica") +
-      0.20 * g("informatica") +
+      0.15 * g("matematica") +
+      0.15 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.20 * g("bac"),
-    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 20% BAC"
+      0.20 * g("anual") +
+      0.15 * g("examen") +
+      0.15 * g("bac"),
+    descriere: "15% Matematică + 15% Informatică + 10% Română + 10% Engleză + 20% Media anuală + 15% Examen + 15% BAC"
   },
   "USM - Universitatea de Stat din Moldova": {
     calc: g =>
-      0.20 * g("matematica") +
-      0.20 * g("informatica") +
+      0.15 * g("matematica") +
+      0.15 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("fizica") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.20 * g("bac"),
-    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Fizică + 10% Media anuală + 10% Examen + 20% BAC"
+      0.20 * g("anual") +
+      0.15 * g("examen") +
+      0.15 * g("bac"),
+    descriere: "15% Matematică + 15% Informatică + 10% Română + 10% Fizică + 20% Media anuală + 15% Examen + 15% BAC"
   },
   "Universitatea de Stat „Alecu Russo” din Bălți": {
     calc: g =>
-      0.20 * g("matematica") +
-      0.20 * g("informatica") +
+      0.15 * g("matematica") +
+      0.15 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.20 * g("bac"),
-    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 20% BAC"
+      0.20 * g("anual") +
+      0.15 * g("examen") +
+      0.15 * g("bac"),
+    descriere: "15% Matematică + 15% Informatică + 10% Română + 10% Engleză + 20% Media anuală + 15% Examen + 15% BAC"
   },
   "Universitatea de Studii Europene": {
     calc: g =>
-      0.20 * g("matematica") +
-      0.20 * g("informatica") +
+      0.15 * g("matematica") +
+      0.15 * g("informatica") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.20 * g("bac"),
-    descriere: "20% Matematică + 20% Informatică + 10% Română + 10% Engleză + 10% Media anuală + 10% Examen + 20% BAC"
+      0.20 * g("anual") +
+      0.15 * g("examen") +
+      0.15 * g("bac"),
+    descriere: "15% Matematică + 15% Informatică + 10% Română + 10% Engleză + 20% Media anuală + 15% Examen + 15% BAC"
   },
 
   // MEDICINA
   "UMF Iași": {
     calc: g =>
-      0.22 * g("chimie") +
-      0.22 * g("biologie") +
+      0.20 * g("chimie") +
+      0.20 * g("biologie") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
       0.10 * g("fizica") +
-      0.08 * g("anual") +
-      0.08 * g("examen") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
       0.10 * g("bac"),
-    descriere: "22% Chimie + 22% Biologie + 10% Română + 10% Engleză + 10% Fizică + 8% Media anuală + 8% Examen + 10% BAC"
+    descriere: "20% Chimie + 20% Biologie + 10% Română + 10% Engleză + 10% Fizică + 10% Media anuală + 10% Examen + 10% BAC"
   },
   "UMFST Târgu Mureș - extensie Bacău": {
     calc: g =>
-      0.22 * g("chimie") +
-      0.22 * g("biologie") +
+      0.20 * g("chimie") +
+      0.20 * g("biologie") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
       0.10 * g("fizica") +
-      0.08 * g("anual") +
-      0.08 * g("examen") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
       0.10 * g("bac"),
-    descriere: "22% Chimie + 22% Biologie + 10% Română + 10% Engleză + 10% Fizică + 8% Media anuală + 8% Examen + 10% BAC"
+    descriere: "20% Chimie + 20% Biologie + 10% Română + 10% Engleză + 10% Fizică + 10% Media anuală + 10% Examen + 10% BAC"
   },
   "USMF „Nicolae Testemițanu”": {
     calc: g =>
-      0.22 * g("chimie") +
-      0.22 * g("biologie") +
+      0.20 * g("chimie") +
+      0.20 * g("biologie") +
       0.10 * g("romana") +
       0.10 * g("engleza") +
       0.10 * g("fizica") +
-      0.08 * g("anual") +
-      0.08 * g("examen") +
+      0.10 * g("anual") +
+      0.10 * g("examen") +
       0.10 * g("bac"),
-    descriere: "22% Chimie + 22% Biologie + 10% Română + 10% Engleză + 10% Fizică + 8% Media anuală + 8% Examen + 10% BAC"
+    descriere: "20% Chimie + 20% Biologie + 10% Română + 10% Engleză + 10% Fizică + 10% Media anuală + 10% Examen + 10% BAC"
   },
 
   // DREPT
   "UAIC - Drept": {
     calc: g =>
-      0.30 * g("istorie") +
-      0.30 * g("romana") +
+      0.25 * g("istorie") +
+      0.25 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "25% Istorie + 25% Română + 10% Engleză + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   },
   "UGAL - Drept": {
     calc: g =>
-      0.30 * g("istorie") +
-      0.30 * g("romana") +
+      0.25 * g("istorie") +
+      0.25 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "25% Istorie + 25% Română + 10% Engleză + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   },
   "USV - Drept": {
     calc: g =>
-      0.30 * g("istorie") +
-      0.30 * g("romana") +
+      0.25 * g("istorie") +
+      0.25 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "25% Istorie + 25% Română + 10% Engleză + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   },
   "USM - Drept": {
     calc: g =>
-      0.30 * g("istorie") +
-      0.30 * g("romana") +
+      0.25 * g("istorie") +
+      0.25 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "25% Istorie + 25% Română + 10% Engleză + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   },
   "ULIM - Facultatea de Drept": {
     calc: g =>
-      0.30 * g("istorie") +
-      0.30 * g("romana") +
+      0.25 * g("istorie") +
+      0.25 * g("romana") +
       0.10 * g("engleza") +
-      0.10 * g("anual") +
-      0.10 * g("examen") +
-      0.10 * g("bac"),
-    descriere: "30% Istorie + 30% Română + 10% Engleză + 10% Media anuală + 10% Examen + 10% BAC"
+      0.15 * g("anual") +
+      0.125 * g("examen") +
+      0.125 * g("bac"),
+    descriere: "25% Istorie + 25% Română + 10% Engleză + 15% Media anuală + 12.5% Examen + 12.5% BAC"
   }
 };
 
